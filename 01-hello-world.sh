@@ -1,3 +1,3 @@
 #!/bin/bash
 
-Hello, Iam learning devops
+echo Hello, Iam learning devops
