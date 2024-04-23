@@ -1,3 +1,3 @@
 #!/bin/bash
 
-This is a simple script.
+Hello, Iam learning devops
