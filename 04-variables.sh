@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#declaring of varible
+#declaring of variables
 PERSON1=$1
 PERSON2=$2
 
