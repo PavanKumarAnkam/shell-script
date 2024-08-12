@@ -1,8 +1,11 @@
 #!/bin/bash
 
 USERID=$(id -u)
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
+TIMESTAMP=$(date +%F-%H-%M-%S)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 
-# VALIDATE() {
+# VALIDATE() { ---- we can write a sample function like this
 #     echo "exit status:$1"
 #     echo "what is going on:$2"
 # }
@@ -23,9 +26,9 @@ else
     echo "You are super user."
 fi
 
-dnf install mysql -y
+dnf install mysql -y&>>$LOGFILE
 VALIDATE $? "Installing mysql" # here $? is 1st var and Installing mysql is 2nd var which we have given as $! and $2 above
 
-dnf install git -y
+dnf install git -y&>>$LOGFILE
 VALIDATE $? "Installing git"
 
