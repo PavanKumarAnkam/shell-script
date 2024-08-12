@@ -1,9 +1,9 @@
 #!/bin/bash
 
 USERID=$(id -u)
-LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 # VALIDATE() { ---- we can write a sample function like this
 #     echo "exit status:$1"
