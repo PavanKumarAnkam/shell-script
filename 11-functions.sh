@@ -2,8 +2,12 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0 ]
-then
+VALIDATE() {
+    echo "exit status:$1"
+    echo "what is going on:$2"
+}
+
+if [ $USERID -ne 0 ]; then
     echo "Please run this script with root access."
     exit 1 # manually exit if error comes.
 else
@@ -11,23 +15,9 @@ else
 fi
 
 dnf install mysql -y
-
-if [ $? -ne 0 ]
-then
-    echo "Installation of mysql...FAILURE"
-    exit 1
-else
-    echo "Installation of mysql...SUCCESS"
-fi
+VALIDATE $? "Installing mysql" # here $? is 1st var and Installing mysql is 2nd var which we have given as $! and $2 above
 
 dnf install git -y
-
-if [ $? -ne 0 ]
-then
-    echo "Installation of git...FAILURE"
-    exit 1
-else
-    echo "Installation of Git...SUCCESS"
-fi
+VALIDATE $? "Installing git"
 
 echo "is script proceeding?"
