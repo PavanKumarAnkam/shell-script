@@ -2,9 +2,18 @@
 
 USERID=$(id -u)
 
+# VALIDATE() {
+#     echo "exit status:$1"
+#     echo "what is going on:$2"
+# }
+
 VALIDATE() {
-    echo "exit status:$1"
-    echo "what is going on:$2"
+    if [ $1 -ne 0 ]; then # Added space after 'if'
+        echo "$2 failed..."
+        exit 1
+    else
+        echo "$2 success..."
+    fi
 }
 
 if [ $USERID -ne 0 ]; then
@@ -20,4 +29,3 @@ VALIDATE $? "Installing mysql" # here $? is 1st var and Installing mysql is 2nd 
 dnf install git -y
 VALIDATE $? "Installing git"
 
-echo "is script proceeding?"
