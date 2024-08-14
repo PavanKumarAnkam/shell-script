@@ -15,3 +15,6 @@ else
     exit 1
 fi
 
+find .  -type f -mtime +14 -name "*.log" |xargs rm -f
+
+
