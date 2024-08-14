@@ -11,6 +11,7 @@ if [ -d $SOURCE_DIRECTORY ]
 then
     echo -e "$G source directory exists $N"
     find "$SOURCE_DIRECTORY" -type f -mtime +14 -name "*.log" | xargs rm -f
+    echo -e "$G selected logs deleted $N"
 else
     echo -e "$R source directory $SOURCE_DIRECTORY doesnot exists $N"
     exit 1
