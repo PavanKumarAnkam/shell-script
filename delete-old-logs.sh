@@ -12,4 +12,6 @@ then
     echo -e "$G source directory exists $N"
 else
     echo -e "$R source directory $SOURCE_DIRECTORY doesnot exists $N"
+    exit 1
 fi
+
