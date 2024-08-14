@@ -17,5 +17,13 @@ else
     exit 1
 fi
 
+#method-2
+# for file in $(find "$LOG_DIRECTORY" -type f -mtime +$DAYS -name "*.log"); do
+#     rm -f "$file"
+# done
 
+# method-3
+# find "$LOG_DIRECTORY" -type f -mtime +$DAYS -name "*.log" | while read -r file; do
+#     rm -f "$file"
+# done
 
