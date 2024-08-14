@@ -10,7 +10,7 @@ N="\e[0m"
 if [ -d $SOURCE_DIRECTORY ] 
 then
     echo -e "$G source directory exists $N"
-    find .  -type f -mtime +14 -name "*.log" |xargs rm -f
+    find "$SOURCE_DIRECTORY" -type f -mtime +$DAYS -name "*.log" | xargs rm -f
 else
     echo -e "$R source directory $SOURCE_DIRECTORY doesnot exists $N"
     exit 1
